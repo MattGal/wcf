@@ -11,9 +11,21 @@
     "Microsoft.DotNet.BuildTools.TestSuite": "1.0.0-prerelease-00520-02"
   },
   "frameworks": {
-    "netstandard1.3": { }
+  "netstandard1.3": { },
+  "uap10.0": {
+      "dependencies": {
+        "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.1-beta-000547-00",
+        "System.Console": "4.0.1-beta-24223-03",
+        "microsoft.xunit.runner.uwp": "1.0.3-prerelease-00614-01",
+        "Microsoft.DotNet.TestILC": {
+          "version": "1.4.24208-prerelease",
+          "include": "contentFiles"
+        }
+      }
+    }
   },
   "supports": {
+    "coreFx.Test.netcore50aot": {},
     "coreFx.Test.netcoreapp1.0": { },
     "coreFx.Test.net46": { },
     "coreFx.Test.net461": { },
