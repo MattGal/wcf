@@ -6,7 +6,9 @@
       <TargetGroup>net46</TargetGroup>
     </Project>
     <Project Include="System.ServiceModel.Primitives.csproj" >
+      <TargetGroup>netstandard1.3</TargetGroup>
     </Project>
+    <Project Include="System.ServiceModel.Primitives.csproj" />
   </ItemGroup>
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.traversal.targets))\dir.traversal.targets" />
 </Project>

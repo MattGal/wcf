@@ -34,6 +34,7 @@
       <CurrentRef>$(CoreFxCurrentRef)</CurrentRef>
       <!-- manually pick up a new baseline in order to get package dependencies updated -->
       <DisabledPackages>Microsoft.Private.PackageBaseline</DisabledPackages>
+      <DisabledPackages>NETStandard.Library</DisabledPackages>
     </RemoteDependencyBuildInfo>
     <RemoteDependencyBuildInfo Include="CoreClr">
       <BuildInfoPath>$(BaseDotNetBuildInfo)coreclr/$(DependencyBranch)</BuildInfoPath>
