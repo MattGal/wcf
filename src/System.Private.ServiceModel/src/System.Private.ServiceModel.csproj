@@ -29,7 +29,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Windows_Release|AnyCPU'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Windows_netcore50_Debug|AnyCPU'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Windows_netcore50_Release|AnyCPU'" />
-  <PropertyGroup Condition="'$(TargetGroup)' == 'netcore50'">
+  <PropertyGroup Condition="'$(TargetGroup)' == 'netcore50' OR '$(TargetGroup)' == 'netstandard1.3'">
     <DefineConstants>$(DefineConstants);NETStandard13</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetGroup)' == 'netcore50'">
@@ -42,10 +42,6 @@
     <DefineConstants>$(DefineConstants);TARGETS_WINDOWS</DefineConstants>
     <ProjectJson>$(MsBuildThisFileDirectory)windows\project.json</ProjectJson>
     <ProjectLockJson>$(MsBuildThisFileDirectory)windows\project.lock.json</ProjectLockJson>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetGroup)' == 'netstandard2.0'">
-    <ProjectJson>$(MsBuildThisFileDirectory)netstandard\project.json</ProjectJson>
-    <ProjectLockJson>$(MsBuildThisFileDirectory)netstandard\project.lock.json</ProjectLockJson>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetGroup)' != 'netcore50' AND '$(TargetsWindows)' == 'true'">
     <DefineConstants>$(DefineConstants);SUPPORTS_WINDOWSIDENTITY</DefineConstants>
@@ -75,5 +71,4 @@
     </Content>
   </ItemGroup>
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.targets))\dir.targets" />
-  <Import Condition="'$(TargetGroup)'=='netstandard2.0'" Project="$(PackagesDir)NETStandard.Library\2.0.0-$(StandardExpectedPrerelease)\build\netstandard2.0\NETStandard.Library.targets" />
 </Project>

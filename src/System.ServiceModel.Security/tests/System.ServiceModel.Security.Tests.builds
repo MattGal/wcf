@@ -2,10 +2,17 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))\dir.props" />
   <ItemGroup>
+
+<!-- TODO: Get this working for netstandard 1.3
     <Project Include="System.ServiceModel.Security.Tests.csproj" >
       <TargetGroup>netstandard1.3</TargetGroup>
       <TestTFMs>netcore50;netcoreapp1.1</TestTFMs>
-    </Project>
+    </Project> -->
+
+    <Project Include="System.ServiceModel.Security.Tests.csproj" >
+      <TargetGroup>netstandard2.0</TargetGroup>
+      <TestTFMs>netcoreapp2.0</TestTFMs>
+    </Project> 
   </ItemGroup>
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.traversal.targets))\dir.traversal.targets" />
 </Project>
